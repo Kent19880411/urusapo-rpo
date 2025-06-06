@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="ja" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RPO事業変革：DX支援による新たな価値創造への道筋</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+    <!-- Chosen Palette: Calm & Professional (Beige, Dark Slate, Deep Blue, Muted Teal) -->
+    <!-- Application Structure Plan: A single-page, scrolling narrative SPA. The structure guides the user from the "Problem" (AI disruption) to the "Opportunity" (SME DX needs), the "Unique Solution" (RPO+DX synergy), a "Concrete Plan" (service packages & roadmap), and the "Competitive Advantage". This narrative flow was chosen over a direct report replication to create a more compelling and persuasive user journey, making the complex strategy easier to digest and understand. -->
+    <!-- Visualization & Content Choices: 
+        - Global RPO Market Growth: Goal: Change. Viz: Line Chart (Chart.js). Justification: Shows trend over time clearly.
+        - AI Adoption in HR: Goal: Inform. Viz: Donut Chart (Chart.js). Justification: Highlights a single, powerful statistic.
+        - SME DX Challenges: Goal: Compare. Viz: Horizontal Bar Chart (Chart.js). Justification: Effectively compares the magnitude of different pain points.
+        - RPO-DX Synergy: Goal: Organize. Viz: HTML/CSS Diagram. Justification: Illustrates the value proposition flow without SVG/Mermaid.
+        - Service Tiers: Goal: Organize/Compare. Viz: Styled Cards (HTML/CSS). Justification: Clearly segments offerings for easy comparison.
+        - Execution Roadmap: Goal: Organize/Change. Viz: Vertical Timeline (HTML/CSS). Justification: Shows phased implementation over time. NO SVG/Mermaid.
+        - Competitive Positioning: Goal: Compare/Relationships. Viz: Radar Chart (Chart.js). Justification: Excellent for multi-attribute comparison against competitors.
+    -->
+    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+    <style>
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+            background-color: #F5F5F3; /* Calm Beige */
+            color: #2F4858; /* Dark Slate */
+        }
+        .chart-container {
+            position: relative;
+            margin: auto;
+            height: 45vh;
+            width: 100%;
+            max-width: 600px;
+            max-height: 400px;
+        }
+        @media (max-width: 768px) {
+            .chart-container {
+                height: 50vh;
+            }
+        }
+        .text-deep-blue { color: #001F54; }
+        .bg-deep-blue { background-color: #001F54; }
+        .border-deep-blue { border-color: #001F54; }
+        .text-muted-teal { color: #037971; }
+        .bg-muted-teal { background-color: #037971; }
+        .border-muted-teal { border-color: #037971; }
+        .gradient-header {
+            background: linear-gradient(135deg, #001F54 0%, #0a3d91 100%);
+        }
+        .section-title {
+            font-size: 2.25rem;
+            font-weight: 700;
+            color: #001F54;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        .section-subtitle {
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+            color: #556270;
+            margin-bottom: 3rem;
+            font-size: 1.125rem;
+            line-height: 1.75;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <header class="gradient-header text-white text-center py-24 px-6">
+        <h1 class="text-4xl md:text-5xl font-bold mb-4">AI時代のRPO事業変革</h1>
+        <p class="text-xl md:text-2xl font-light max-w-4xl mx-auto">DX支援による新たな価値創造への道筋</p>
+    </header>
+
+    <nav class="bg-white/80 backdrop-blur-md sticky top-0 z-50 shadow-md">
+        <div class="container mx-auto px-6 py-3">
+            <ul class="flex justify-center space-x-4 md:space-x-8 text-sm md:text-base">
+                <li><a href="#crisis" class="text-deep-blue hover:text-muted-teal font-medium transition-colors">構造変化の危機</a></li>
+                <li><a href="#opportunity" class="text-deep-blue hover:text-muted-teal font-medium transition-colors">新たな市場機会</a></li>
+                <li><a href="#solution" class="text-deep-blue hover:text-muted-teal font-medium transition-colors">解決策と価値</a></li>
+                <li><a href="#roadmap" class="text-deep-blue hover:text-muted-teal font-medium transition-colors">実行計画</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <main class="container mx-auto p-6 md:p-12">
+        
+        <section id="crisis" class="py-16">
+            <h2 class="section-title">1. RPO業界の変曲点：AIが促す構造変化</h2>
+            <p class="section-subtitle">AI技術の急速な進化は、従来の採用代行ビジネスの根幹を揺るがしています。求人媒体自身が提供するAIツールは、RPOの中核業務を代替し、その介在価値を問い直しています。これは単なる脅威ではなく、事業モデルの転換を迫る構造的な変化です。</p>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+                <article class="bg-white rounded-lg shadow-lg p-6 md:p-8">
+                    <h3 class="text-xl font-bold text-deep-blue mb-4">AIによる価値のコモディティ化</h3>
+                    <p class="text-gray-600 mb-6">「従来のRPO代行会社は駆逐されるのではないか」という危機感は現実のものです。AIによる候補者ソーシングやスクリーニングが一般化し、3年後には「作業代行」モデルが成り立たなくなる可能性が指摘されています。</p>
+                    <div class="bg-red-50 border-l-4 border-red-500 p-4 rounded-r-lg">
+                        <p class="font-bold text-red-800">HRリーダーの81%</p>
+                        <p class="text-sm text-red-700">が採用業務で生成AIソリューションを導入済み、または検討中と回答。(出典: Gartner)</p>
+                    </div>
+                </article>
+                <article class="bg-white rounded-lg shadow-lg p-6 md:p-8">
+                     <h3 class="text-xl font-bold text-center text-deep-blue mb-4">グローバルRPO市場の成長予測</h3>
+                    <div class="chart-container h-80">
+                        <canvas id="marketGrowthChart"></canvas>
+                    </div>
+                    <p class="text-center text-xs text-gray-500 mt-2">市場は成長していますが、その中身はテクノロジーを活用した新形態のサービスが牽引しており、価値の源泉が変化していることを示唆しています。</p>
+                </article>
+            </div>
+        </section>
+
+        <section id="opportunity" class="py-16 bg-gray-50 rounded-lg">
+            <h2 class="section-title">2. 未開拓の可能性：中小企業DX支援</h2>
+            <p class="section-subtitle">AIの脅威を乗り越える活路は、日本経済の屋台骨である中小企業にあります。多くの中小企業がDXの必要性を感じながらも、「何から始めれば良いかわからない」という課題を抱えています。ここにRPOが新たな価値を提供する巨大な市場が眠っています。</p>
+
+            <div class="grid grid-cols-1 lg:grid-cols-5 gap-8 items-center">
+                <div class="lg:col-span-3 bg-white rounded-lg shadow-lg p-6 md:p-8">
+                    <h3 class="text-xl font-bold text-center text-deep-blue mb-4">中小企業が直面するDXの障壁</h3>
+                     <div class="chart-container h-96">
+                        <canvas id="smeChallengesChart"></canvas>
+                    </div>
+                     <p class="text-center text-xs text-gray-500 mt-2">人材、ノウハウ、予算といった課題は、単なるツール導入ではなく、伴走型の支援パートナーへのニーズを示唆しています。</p>
+                </div>
+                <div class="lg:col-span-2 space-y-6">
+                    <div class="bg-white rounded-lg shadow p-6 border-l-4 border-muted-teal">
+                        <h4 class="font-bold text-muted-teal mb-2">既存の顧客基盤</h4>
+                        <p class="text-sm text-gray-600">採用を通じて築いた信頼関係が、DX支援へのスムーズな導入を可能にします。</p>
+                    </div>
+                     <div class="bg-white rounded-lg shadow p-6 border-l-4 border-muted-teal">
+                        <h4 class="font-bold text-muted-teal mb-2">事業運営への深い理解</h4>
+                        <p class="text-sm text-gray-600">組織構造や文化を理解しており、表面的な課題の先にある真のニーズを捉えることができます。</p>
+                    </div>
+                     <div class="bg-white rounded-lg shadow p-6 border-l-4 border-muted-teal">
+                        <h4 class="font-bold text-muted-teal mb-2">「人」中心のアプローチ</h4>
+                        <p class="text-sm text-gray-600">DX成功の鍵である「人」の変革を支援できるのは、HRの専門知識を持つRPOならではの強みです。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="solution" class="py-16">
+            <h2 class="section-title">3. 新たな価値の設計：RPO + DXソリューション</h2>
+            <p class="section-subtitle">採用の専門知識とDXコンサルティングを融合させることで、他社にはない独自の価値を提供します。単なるツール導入屋ではなく、企業の「人」と「組織」の成長をテクノロジーで加速させる戦略的パートナーを目指します。</p>
+
+            <div class="flex flex-col md:flex-row items-center justify-center bg-white rounded-lg shadow-lg p-8 space-y-6 md:space-y-0 md:space-x-8">
+                <div class="text-center">
+                    <p class="font-bold text-deep-blue">従来のRPO</p>
+                    <p class="text-sm">採用業務代行</p>
+                </div>
+                <div class="text-3xl font-bold text-muted-teal">+</div>
+                 <div class="text-center">
+                    <p class="font-bold text-deep-blue">DX支援</p>
+                    <p class="text-sm">業務効率化・自動化</p>
+                </div>
+                <div class="text-3xl font-bold text-muted-teal">=</div>
+                 <div class="text-center p-4 bg-teal-50 rounded-lg border border-muted-teal">
+                    <p class="text-xl font-bold text-muted-teal">戦略的パートナー</p>
+                    <p class="text-sm">人材獲得力強化と<br>持続的成長の実現</p>
+                </div>
+            </div>
+
+            <div class="mt-12">
+                <h3 class="text-2xl font-bold text-center text-deep-blue mb-8">具体的なサービスパッケージ</h3>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <article class="border border-gray-200 rounded-lg p-6 text-center transform hover:-translate-y-2 transition-transform duration-300 shadow-sm hover:shadow-xl">
+                        <p class="text-2xl mb-4">⚙️</p>
+                        <h4 class="font-bold text-lg text-deep-blue mb-2">DX基礎導入パック</h4>
+                        <p class="text-sm text-gray-600">Google Workspace等を活用し、ペーパーレス化とコミュニケーション基盤を構築。DXの第一歩を支援します。</p>
+                    </article>
+                     <article class="border-2 border-muted-teal rounded-lg p-6 text-center transform hover:-translate-y-2 transition-transform duration-300 shadow-md hover:shadow-xl relative">
+                        <span class="absolute top-0 right-0 bg-muted-teal text-white text-xs font-bold px-3 py-1 rounded-bl-lg">推奨</span>
+                        <p class="text-2xl mb-4">🚀</p>
+                        <h4 class="font-bold text-lg text-deep-blue mb-2">業務効率化推進パック</h4>
+                        <p class="text-sm text-gray-600">定型業務の自動化、ワークフロー改善をノーコードツール等で実現。生産性向上に直接貢献します。</p>
+                    </article>
+                     <article class="border border-gray-200 rounded-lg p-6 text-center transform hover:-translate-y-2 transition-transform duration-300 shadow-sm hover:shadow-xl">
+                         <p class="text-2xl mb-4">💡</p>
+                        <h4 class="font-bold text-lg text-deep-blue mb-2">AI活用スタートパック</h4>
+                        <p class="text-sm text-gray-600">Gemini等の生成AI研修や特定業務への導入支援を通じて、AI活用の具体的なユースケースを創出します。</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="roadmap" class="py-16 bg-gray-50 rounded-lg">
+            <h2 class="section-title">4. 変革への実行ロードマップ</h2>
+            <p class="section-subtitle">事業転換は段階的かつ計画的に進めます。社内チームの育成から始め、パイロットプログラムを経て、徐々にサービスを拡大・多様化させていくことで、着実な成功を目指します。</p>
+
+            <div class="relative max-w-2xl mx-auto">
+                <div class="border-l-2 border-muted-teal absolute h-full top-0 left-4"></div>
+                <div class="space-y-12">
+                    <div class="relative pl-12">
+                        <div class="absolute -left-0 top-1 w-8 h-8 rounded-full bg-muted-teal text-white flex items-center justify-center font-bold">1</div>
+                        <h4 class="font-bold text-lg text-deep-blue mb-1">フェーズ1：基盤構築 (0-6ヶ月)</h4>
+                        <p class="text-sm text-gray-600">コアチーム組成、Google Workspace認定資格取得を含む集中研修、既存顧客とのパイロットプログラム開始。</p>
+                    </div>
+                    <div class="relative pl-12">
+                        <div class="absolute -left-0 top-1 w-8 h-8 rounded-full bg-muted-teal text-white flex items-center justify-center font-bold">2</div>
+                        <h4 class="font-bold text-lg text-deep-blue mb-1">フェーズ2：初期成長 (6-18ヶ月)</h4>
+                        <p class="text-sm text-gray-600">パイロット成功事例を基にマーケティングを開始。「無料AI研修」等をフックに新規顧客を獲得。サービスを洗練。</p>
+                    </div>
+                    <div class="relative pl-12">
+                        <div class="absolute -left-0 top-1 w-8 h-8 rounded-full bg-muted-teal text-white flex items-center justify-center font-bold">3</div>
+                        <h4 class="font-bold text-lg text-deep-blue mb-1">フェーズ3：拡大と多様化 (18ヶ月+)</h4>
+                        <p class="text-sm text-gray-600">パートナー網を拡大し、専門的サービスを開発。特定ニッチ市場でのリーダーシップを確立し、持続的成長軌道へ。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+         <section id="advantage" class="py-16">
+            <h2 class="section-title">競争優位性の確立</h2>
+            <p class="section-subtitle">私たちのモデルは、技術力、コスト、HRへの知見など、複数の側面で従来の競合とは一線を画します。「人」と「テクノロジー」の両面から中小企業の成長を支援する、唯一無二のパートナーとしての地位を築きます。</p>
+            <div class="bg-white rounded-lg shadow-lg p-6 md:p-8">
+                 <div class="chart-container h-96">
+                    <canvas id="competitiveRadarChart"></canvas>
+                </div>
+                 <p class="text-center text-xs text-gray-500 mt-2">RPO+DXモデルの競争ポジショニング評価</p>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-deep-blue text-white text-center py-16 px-6">
+        <h2 class="text-3xl font-bold mb-4">未来のRPOを、共に創る。</h2>
+        <p class="max-w-2xl mx-auto mb-8 font-light">AIの波を乗りこなし、中小企業のデジタル進化に不可欠な存在へ。この変革の旅に、ぜひご参加ください。</p>
+        <button class="bg-muted-teal hover:bg-teal-700 text-white font-bold py-3 px-8 rounded-full transition-colors duration-300 text-lg">
+            事業変革について相談する
+        </button>
+    </footer>
+
+    <script>
+        const brandColors = {
+            deepBlue: '#001F54',
+            darkSlate: '#2F4858',
+            mutedTeal: '#037971',
+            lightGray: '#D1D5DB',
+        };
+
+        const chartDefaultOptions = {
+            maintainAspectRatio: false,
+            responsive: true,
+            plugins: {
+                tooltip: {
+                    backgroundColor: 'rgba(0, 31, 84, 0.9)',
+                    titleColor: '#FFFFFF',
+                    bodyColor: '#FFFFFF',
+                    padding: 12,
+                    boxPadding: 4,
+                    callbacks: {
+                        title: function(tooltipItems) {
+                            const item = tooltipItems[0];
+                            let label = item.chart.data.labels[item.dataIndex];
+                            return Array.isArray(label) ? label.join(' ') : label;
+                        }
+                    }
+                },
+                legend: {
+                    labels: {
+                        color: brandColors.darkSlate,
+                        font: {
+                            size: 12,
+                            family: "'Noto Sans JP', sans-serif",
+                        }
+                    }
+                }
+            },
+            scales: {
+                y: {
+                    ticks: { color: brandColors.darkSlate, font: { family: "'Noto Sans JP', sans-serif" } },
+                    grid: { color: '#E5E7EB' }
+                },
+                x: {
+                   ticks: { color: brandColors.darkSlate, font: { family: "'Noto Sans JP', sans-serif" } },
+                   grid: { display: false }
+                }
+            }
+        };
+        
+        function wrapLabels(label) {
+            const maxLength = 16;
+            if (typeof label !== 'string' || label.length <= maxLength) return label;
+            const words = label.split('');
+            let currentLine = '';
+            const lines = [];
+            words.forEach(char => {
+                if ((currentLine + char).length > (maxLength / 2) && (currentLine.includes('・') || currentLine.includes('、') || currentLine.includes(' '))) {
+                     lines.push(currentLine);
+                     currentLine = char;
+                } else if(currentLine.length > maxLength) {
+                    lines.push(currentLine);
+                    currentLine = char;
+                } else {
+                    currentLine += char;
+                }
+            });
+            if(currentLine) lines.push(currentLine);
+            return lines.length > 1 ? lines : lines[0];
+        }
+
+        window.onload = function() {
+            if (document.getElementById('marketGrowthChart')) {
+                new Chart(document.getElementById('marketGrowthChart'), {
+                    type: 'line',
+                    data: {
+                        labels: ['2024', '2026', '2028', '2030'],
+                        datasets: [{
+                            label: 'グローバルRPO市場予測 (10億ドル)',
+                            data: [9.7, 13.1, 17.6, 22.9],
+                            borderColor: brandColors.mutedTeal,
+                            backgroundColor: 'rgba(3, 121, 113, 0.1)',
+                            fill: true,
+                            tension: 0.3
+                        }]
+                    },
+                    options: chartDefaultOptions
+                });
+            }
+
+            if (document.getElementById('smeChallengesChart')) {
+                 const originalLabels = ['IT・DX推進人材の不足', 'ノウハウ・知見の不足', '予算の制約', '効果の不明確さ'];
+                 const wrappedLabels = originalLabels.map(wrapLabels);
+                new Chart(document.getElementById('smeChallengesChart'), {
+                    type: 'bar',
+                    data: {
+                        labels: wrappedLabels,
+                        datasets: [{
+                            label: '課題と感じる中小企業の割合 (%)',
+                            data: [25.4, 24.8, 20.0, 18.0],
+                            backgroundColor: [
+                                'rgba(3, 121, 113, 0.7)',
+                                'rgba(3, 121, 113, 0.5)',
+                                'rgba(0, 31, 84, 0.7)',
+                                'rgba(0, 31, 84, 0.5)'
+                            ],
+                            borderWidth: 0
+                        }]
+                    },
+                    options: {
+                        ...chartDefaultOptions,
+                        indexAxis: 'y',
+                         plugins: { ...chartDefaultOptions.plugins, legend: { display: false }},
+                         scales: {
+                             x: { ...chartDefaultOptions.scales.x, grid: { display: true } },
+                             y: { ...chartDefaultOptions.scales.y, grid: { display: false } }
+                         }
+                    }
+                });
+            }
+
+            if (document.getElementById('competitiveRadarChart')) {
+                const originalRadarLabels = ['中小企業への焦点', 'HR・採用の知見', '変革マネジメント支援', '技術的専門性', 'コスト効率'];
+                const wrappedRadarLabels = originalRadarLabels.map(wrapLabels);
+                new Chart(document.getElementById('competitiveRadarChart'), {
+                    type: 'radar',
+                    data: {
+                        labels: wrappedRadarLabels,
+                        datasets: [{
+                            label: 'RPO+DXモデル',
+                            data: [9, 9, 8, 6, 8],
+                            backgroundColor: 'rgba(3, 121, 113, 0.2)',
+                            borderColor: brandColors.mutedTeal,
+                            pointBackgroundColor: brandColors.mutedTeal,
+                        }, {
+                            label: '大手ITコンサル',
+                            data: [4, 3, 7, 9, 3],
+                            backgroundColor: 'rgba(0, 31, 84, 0.2)',
+                            borderColor: brandColors.deepBlue,
+                            pointBackgroundColor: brandColors.deepBlue,
+                        }]
+                    },
+                    options: { 
+                        ...chartDefaultOptions,
+                        plugins: { ...chartDefaultOptions.plugins, legend: { position: 'top' }},
+                        scales: {
+                            r: {
+                                beginAtZero: true,
+                                angleLines: { color: '#E5E7EB' },
+                                grid: { color: '#E5E7EB' },
+                                pointLabels: { 
+                                    font: { size: 12, family: "'Noto Sans JP', sans-serif" },
+                                    color: brandColors.darkSlate
+                                },
+                                ticks: {
+                                    display: false,
+                                    stepSize: 2
+                                }
+                            }
+                        }
+                     }
+                });
+            }
+
+            const navLinks = document.querySelectorAll('nav a');
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        targetElement.scrollIntoView({ behavior: 'smooth' });
+                    }
+                });
+            });
+        };
+    </script>
+</body>
+</html>
